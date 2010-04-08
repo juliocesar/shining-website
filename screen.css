@@ -1,0 +1,33 @@
+@import "reset.css";
+
+html { background-color: #303030 }
+body { 
+  background-color: #4A4A4A;
+  width: 700px; margin: 0 auto; padding: 30px 20px;
+  -webkit-box-shadow: 0px 3px 5px #141414;
+  -moz-box-shadow: 0px 3px 5px #141414;  
+  box-shadow: 0px 3px 5px #141414;    
+}
+
+a { color: #499DFF }
+
+h1, h2, p { color: #EEEEEE; font-family: "Lucida Grande", Tahoma, serif; text-shadow: #000 2px 2px 4px }
+h1        { font-size: 2em; margin: 0.4em 0 }
+
+header    { margin-bottom: 30px }
+header h1 { margin: 0.1em 0 }
+header p  { font-size: 0.8em; text-indent: 2em }
+
+section h1    { font-size: 1.2em; margin: 0.4em 0 }
+section p     { font-size: 1em; line-height: 1.2em }
+
+code  { 
+  display: block; 
+  margin: 1em 0; 
+  padding: 10px; 
+  color: #49FF50;
+  background-color: #303030;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
