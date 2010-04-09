@@ -11,9 +11,7 @@
     <script type="text/javascript" charset="utf-8" src="shCore.js"></script>
     <script type="text/javascript" charset="utf-8" src="shBrushAll.js"></script>    
     <script type="text/javascript">
-      $(document).ready(function() {
-        SyntaxHighlighter.highlight();
-      })
+      $(document).ready(function() { SyntaxHighlighter.highlight() })
     </script>
   </head>
   <body>
@@ -23,7 +21,7 @@
     </header>
     <section id="quickstart">
       <h1>Quickstart</h1>
-      <p>Install via:</p>
+      <p>Install via <a href="http://rubygems.org/">rubygems</a>:</p>
       <code>$ sudo gem install shining</code>
       <p>Create a new presentation:</p>
       <code>$ shine mypresentationdir</code>
@@ -124,6 +122,17 @@
       </script>      
       <p>This is handy if you want to schedule things you'd like to see happening at certain stages during a presentation.</p>
     </section>
+    <section id="vendor">
+      <h1>Deploying</h1>
+      <p>
+        If at some stage you wish to publish the presentation on <a href="http://drunkenachura.files.wordpress.com/2009/07/internet-serious-business.jpg">the internet</a> perhaps, or
+        it's best if you <em>vendor</em> all the dependencies first. This will ensure all the necessary libraries required
+        to play your presentation are included. In a gist, you're making your presentation self-contained.
+      </p>
+      <p>In the presentation's directory, run the command:</p>
+      <code>$ shine vendor</code>
+      <p>Then put this folder somewhere accessible via the web, point your browser to it, and you're set.</p>
+    </section>
     <section id="effects">
       <h1>Effects</h1>
       <p>
@@ -132,7 +141,8 @@
         <em>may</em> work on <a href="getfirefox.com">Firefox</a>, and most likely <em>will not</em> work with Internet Explorer.
       </p>
       <p>
-        That may or may not change in the near future. For now, stick to using decent web browsers when presenting.
+        That may or may not change in the near future. For now, stick to using decent web browsers when presenting, and perhaps
+        relying more on content rather than presentation ;-)
       </p>
     </section>
     <section id="contributing">
@@ -145,7 +155,7 @@
     </section>
     <footer>
       <p>
-        Shining is written by <a href="http://crazyhollywood.org">Julio</a>. Find me on twitter through
+        Shining is written by <a href="http://crazyhollywood.org">Julio</a>. Find me on Twitter through
         <a href="http://twitter.com/julio_ody">@julio_ody</a>.
       </p>
     </footer>
