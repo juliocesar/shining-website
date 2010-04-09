@@ -23,9 +23,9 @@ $(document).ready(function() {
       .append('<p>Bear with us, this page is still a work in progress.</p>')
       .prepend('<span class="wink">:-)</span>')
       .appendTo('html')
-      .delay(2000)
+      .delay(3000)
       .fadeIn(200)
-      .delay(6000)
+      .delay(7000)
       .fadeOut(
         200, 
         function() { 
@@ -33,7 +33,7 @@ $(document).ready(function() {
           document.cookie = 'seen';
         }
       );
-    setTimeout(function() { $('#construction .wink').text(';-)') }, 3000);
-    setTimeout(function() { $('#construction .wink').text(':-)') }, 3500);    
+    setTimeout(function() { $('#construction .wink').text(';-)') }, 4000);
+    setTimeout(function() { $('#construction .wink').text(':-)') }, 4500);    
   }
 });
