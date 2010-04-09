@@ -16,4 +16,24 @@ $(document).ready(function() {
     $('#toc ol').append('<li style="display: none"><a href="#' + container.attr('id') + '">' + text + '</a></li>')
   });
   $('#toc ol li').oneAtEachTime('fadeIn', [], 100);
+  
+  // Under construction
+  if (!/seen/.test(document.cookie)) {
+    $('<div id="construction"></div>')
+      .append('<p>Bear with us, this page is still a work in progress.</p>')
+      .prepend('<span class="wink">:-)</span>')
+      .appendTo('html')
+      .delay(2000)
+      .fadeIn(200)
+      .delay(6000)
+      .fadeOut(
+        200, 
+        function() { 
+          $('#construction').remove();
+          document.cookie = 'seen';
+        }
+      );
+    setTimeout(function() { $('#construction .wink').text(';-)') }, 3000);
+    setTimeout(function() { $('#construction .wink').text(':-)') }, 3500);    
+  }
 });

@@ -42,3 +42,22 @@ code  {
   border-radius: 5px;
 }
 .syntaxhighlighter code { display: inline }
+
+#construction {
+  display: none;  
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  padding: 10px;
+  width: 250px;
+  background-color: #FF5049;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px
+}
+#construction .wink {
+  color: #EEE;
+  float: left;
+  font-size: 35px;
+  margin-right: 10px
+}
