@@ -5,11 +5,12 @@
     <title>Shining</title>
     <meta name="keywords" content="presentations, javascript, framework, presentations online" />
     <link rel="stylesheet" href="screen.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="shCore.css" type="text/css" media="screen" />    
-    <link rel="stylesheet" href="shThemeFadeToGrey.css" type="text/css" media="screen" />    
+    <link rel="stylesheet" href="shCore.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="shThemeFadeToGrey.css" type="text/css" media="screen" />
     <script type="text/javascript" charset="utf-8" src="jquery-1.4.1.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="shCore.js"></script>
-    <script type="text/javascript" charset="utf-8" src="shBrushAll.js"></script>    
+    <script type="text/javascript" charset="utf-8" src="shBrushAll.js"></script>
+    <script type="text/javascript" charset="utf-8" src="dascripts.js"></script>
     <script type="text/javascript">
       $(document).ready(function() { SyntaxHighlighter.highlight() })
     </script>
@@ -53,16 +54,16 @@
       <h1>Configuration</h1>
       <p>
         Presentation-wide configuration happens in the <em>config.json</em> file, which as you probably
-        guessed, it's a plain text file containing <a href="http://www.jsonlint.com/">valid JSON</a>. It's
-        important that it should be valid (e.g.: no single quotes) as otherwise it won't be parsed at all. 
-        Valid parameters:
+        guessed, it's a plain text file containing an object in <a href="http://www.jsonlint.com/">valid JSON</a>.
+        It's important that it's valid (e.g.: no single quotes) as otherwise your presentation won't even start.
+        Valid attributes are:
         <ul>
           <li>
             slides: an array containing the name of the presentation's slides. If you're using the generator
             to add slides, don't worry about editing it.
           </li>
           <li>
-            transitions: a string corresponding to one of the <a href="#">available transition effects</a>, 
+            transitions: a string corresponding to one of the <a href="#">available transition effects</a>,
             or <em>false</em> disables them altogether.
           </li>
         </ul>
@@ -73,19 +74,19 @@
       <p>Easy way first. Change the directory to the presentation's directory first. Then:</p>
       <code>$ shine slide mynewslide</code>
       <p>
-        Where "mynewslide" is the name of the slide. This will create a slide in <em>ROOT/slides/mynewslide.html</em>, 
-        and a <a href="#">slide script</a> in <em>ROOT/slides/mynewslide.js</em>. It will also automagically edit the 
+        Where "mynewslide" is the name of the slide. This will create a slide in <em>ROOT/slides/mynewslide.html</em>,
+        and a <a href="#">slide script</a> in <em>ROOT/slides/mynewslide.js</em>. It will also automagically edit the
         <em>config.json</em> file for you, adding a reference to the newly added slide.
       </p>
       <p>
-        You can also create slides manually by adding an HTML file to <em>ROOT/slides</em>, and then adding the file name 
+        You can also create slides manually by adding an HTML file to <em>ROOT/slides</em>, and then adding the file name
         (minus the extension) to <em>config.json</em>. Though really, just use the damn generator.
       </p>
     </section>
     <section id="templates">
       <h1>Slide templates</h1>
       <p>
-        Shining supports <a href="http://haml-lang.com/">Haml</a> or 
+        Shining supports <a href="http://haml-lang.com/">Haml</a> or
         <a href="http://daringfireball.net/projects/markdown/">Markdown</a> templates for creating slides. Before you
         can use them though, you need to compile the templates into HTML by running a command.
       </p>
@@ -98,9 +99,9 @@
     <section id="scripts">
       <h1>Slide scripts</h1>
       <p>
-        Slides can have an associated script which you can use to trigger certain actions (e.g.: effects) at a predetermined 
-        time. If you used the generator to create a slide, you'll notice a .js file got created along with it. That's the script 
-        we're talking about. So for instance, say you have 2 hidden paragraphs in your slide, and you intent to show one after 
+        Slides can have an associated script which you can use to trigger certain actions (e.g.: effects) at a predetermined
+        time. If you used the generator to create a slide, you'll notice a .js file got created along with it. That's the script
+        we're talking about. So for instance, say you have 2 hidden paragraphs in your slide, and you intent to show one after
         another. Open that .js file and do:
       </p>
       <script type="syntaxhighlighter" class="brush: js; gutter: false">
@@ -113,13 +114,13 @@
       </script>
       <p>It's possible to have Javascript spanning throughout multiple lines as well, such as for instance</p>
       <script type="syntaxhighlighter" class="brush: js; gutter: false">
-      1, 
+      1,
           console.log('this happens 1 second into')
           console.log('and so does this')
       2,  console.log('whereas this happens on second 2')
       4,
           alert('rise and shine!')
-      </script>      
+      </script>
       <p>This is handy if you want to schedule things you'd like to see happening at certain stages during a presentation.</p>
     </section>
     <section id="vendor">
@@ -142,15 +143,16 @@
       </p>
       <p>
         That may or may not change in the near future. For now, stick to using decent web browsers when presenting, and perhaps
-        relying more on content rather than presentation ;-)
+        relying more on content rather than how it looks ;-)
       </p>
+      <p>Proper documentation of effects is coming soon.</p>
     </section>
     <section id="contributing">
       <h1>Contributing</h1>
       <p>
         Shining is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>. The code
         is hosted on <a href="http://github.com/juliocesar/shining">Github</a>. Feel free to report bugs using Github's issue
-        tracker. Patches are more than welcome.        
+        tracker. Patches are more than welcome.
       </p>
     </section>
     <footer>
