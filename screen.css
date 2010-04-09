@@ -26,6 +26,7 @@ header p  { font-size: 0.8em; text-indent: 2em }
 section             { margin-bottom: 20px }
 section:last-child  { margin-bottom: 0 }
 section h1    { font-size: 1.2em; margin: 0.4em 0 }
+section p     { margin: 0.5em 0 }
 
 code  { 
   display: block; 
