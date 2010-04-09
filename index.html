@@ -9,7 +9,7 @@
   <body>
     <header>
       <h1>Shining</h1>
-      <p>A framework for creating in-browser presentations.</p>
+      <p>A toolkit for creating in-browser presentations.</p>
     </header>
     <section id="quickstart">
       <h1>Quickstart</h1>
@@ -22,13 +22,49 @@
         $ shine mypresentationdir
       </code>
     </section>
-    <section id="explanation">
+    <section id="intro">
       <h1>Intro</h1>
       <p>
         Shining helps you creating presentations that you present from a web browser. The presentations
         that it generates are entirely based in HTML, CSS, and Javascript, with a little help from CSS 
         <a href="http://www.w3.org/TR/css3-2d-transforms/">transforms</a> and 
         <a href="http://www.w3.org/TR/css3-transitions/">transitions</a>, and <a href="jquery.com">jQuery</a>.
+      </p>
+    </section>
+    <section id="slides">
+      <h1>What makes a presentation?</h1>
+      <p>
+        A presentation is composed of:
+        <ul>
+          <li>A configuration file named <em>config.json</em>.</li>
+          <li>Slides, which are plain HTML files in the slides folder.</li>
+          <li>
+            An index file named <em>index.html</em> in the root presentation folder, which is where you 
+            start a presentation.
+          </li>
+        </ul>
+      </p>
+    </section>
+    <section id="configuration">
+      <h1>Configuration</h1>
+      <p>
+        Presentation-wide configuration happens in the <em>config.json</em> file. Valid parameters:
+        <ul>
+          <li>
+            slides: an array containing the name of the presentation's slides. If you're using the generator 
+            to add slides, don't worry about editing it.
+          </li>
+          <li>
+            transitions: a string corresponding to one of the <a href="#">available transition effects</a>, or <em>false</em>
+            disables them altogether.
+          </li>
+        </ul>
+      </p>
+    </section>
+    <section id="effects">
+      <h1>Effects</h1>
+      <p>
+        Effects are applied on elements by adding CSS classes to them.
       </p>
     </section>
   </body>

@@ -9,17 +9,23 @@ body {
   box-shadow: 0px 3px 5px #141414;    
 }
 
-a { color: #499DFF }
+a         { text-decoration: underline }
+a         { color: #499DFF }
+a:visited { color: #AB49FF }
 
-h1, h2, p { color: #EEEEEE; font-family: "Lucida Grande", Tahoma, serif; text-shadow: #000 2px 2px 4px }
-h1        { font-size: 2em; margin: 0.4em 0 }
+h1, h2, p, ul { color: #EEEEEE; font-family: "Lucida Grande", Tahoma, serif; text-shadow: #000 2px 2px 0px }
+li, p         { line-height: 1.2em }
+em            { color: #FFAB49 }
+
+ul  { list-style-type: square; margin: 5px 0 5px 15px }
 
 header    { margin-bottom: 30px }
-header h1 { margin: 0.1em 0 }
+header h1 { margin: 0.1em 0; font-size: 2.3em; }
 header p  { font-size: 0.8em; text-indent: 2em }
 
+section             { margin-bottom: 20px }
+section:last-child  { margin-bottom: 0 }
 section h1    { font-size: 1.2em; margin: 0.4em 0 }
-section p     { font-size: 1em; line-height: 1.2em }
 
 code  { 
   display: block; 
