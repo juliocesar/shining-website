@@ -9,8 +9,8 @@ body {
   box-shadow: 0px 3px 5px #141414;    
 }
 
-a         { text-decoration: underline }
-a         { color: #499DFF }
+a:hover   { text-decoration: underline }
+a         { color: #499DFF; text-decoration: none }
 a:visited { color: #AB49FF }
 
 h1, h2, p, ul { color: #EEEEEE; font-family: "Lucida Grande", Tahoma, serif; text-shadow: #000 2px 2px 0px }
@@ -22,6 +22,8 @@ ul  { list-style-type: square; margin: 5px 0 5px 15px }
 header    { margin-bottom: 30px }
 header h1 { margin: 0.1em 0; font-size: 2.3em; }
 header p  { font-size: 0.8em; text-indent: 2em }
+
+footer p  { text-align: center; font-size: 0.8em }
 
 section             { margin-bottom: 20px }
 section:last-child  { margin-bottom: 0 }
@@ -38,3 +40,4 @@ code  {
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
+.syntaxhighlighter code { display: inline }

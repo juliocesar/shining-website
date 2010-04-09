@@ -5,6 +5,16 @@
     <title>Shining</title>
     <meta name="keywords" content="presentations, javascript, framework, presentations online" />
     <link rel="stylesheet" href="screen.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="shCore.css" type="text/css" media="screen" />    
+    <link rel="stylesheet" href="shThemeFadeToGrey.css" type="text/css" media="screen" />    
+    <script type="text/javascript" charset="utf-8" src="jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="shCore.js"></script>
+    <script type="text/javascript" charset="utf-8" src="shBrushAll.js"></script>    
+    <script type="text/javascript">
+      $(document).ready(function() {
+        SyntaxHighlighter.highlight();
+      })
+    </script>
   </head>
   <body>
     <header>
@@ -87,11 +97,57 @@
       <p>Once you're done editing the template, compile by:</p>
       <code>$ shine compile</code>
     </section>
+    <section id="scripts">
+      <h1>Slide scripts</h1>
+      <p>
+        Slides can have an associated script which you can use to trigger certain actions (e.g.: effects) at a predetermined 
+        time. If you used the generator to create a slide, you'll notice a .js file got created along with it. That's the script 
+        we're talking about. So for instance, say you have 2 hidden paragraphs in your slide, and you intent to show one after 
+        another. Open that .js file and do:
+      </p>
+      <script type="syntaxhighlighter" class="brush: js; gutter: false">
+      1, $('p:first').effect('fades-in')
+      3, $('p:eq(1)').effect('fades-in')
+      </script>
+      <p>In a nutshell, the syntax of the file is:</p>
+      <script type="syntaxhighlighter" class="brush: plain; gutter: false">
+      (time), (javascript)
+      </script>
+      <p>It's possible to have Javascript spanning throughout multiple lines as well, such as for instance</p>
+      <script type="syntaxhighlighter" class="brush: js; gutter: false">
+      1, 
+          console.log('this happens 1 second into')
+          console.log('and so does this')
+      2,  console.log('whereas this happens on second 2')
+      4,
+          alert('rise and shine!')
+      </script>      
+      <p>This is handy if you want to schedule things you'd like to see happening at certain stages during a presentation.</p>
+    </section>
     <section id="effects">
       <h1>Effects</h1>
       <p>
-        Effects are applied on elements by adding CSS classes to them.
+        Effects are applied on elements by adding CSS classes to them. Effects are based on CSS transitions and/or transforms.
+        What this means is they're likely to work on top notch engines such as <a href="http://webkit.org/">Webkit</a>, they
+        <em>may</em> work on <a href="getfirefox.com">Firefox</a>, and most likely <em>will not</em> work with Internet Explorer.
+      </p>
+      <p>
+        That may or may not change in the near future. For now, stick to using decent web browsers when presenting.
       </p>
     </section>
+    <section id="contributing">
+      <h1>Contributing</h1>
+      <p>
+        Shining is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>. The code
+        is hosted on <a href="http://github.com/juliocesar/shining">Github</a>. Feel free to report bugs using Github's issue
+        tracker. Patches are more than welcome.        
+      </p>
+    </section>
+    <footer>
+      <p>
+        Shining is written by <a href="http://crazyhollywood.org">Julio</a>. Find me on twitter through
+        <a href="http://twitter.com/julio_ody">@julio_ody</a>.
+      </p>
+    </footer>
   </body>
 </html>
