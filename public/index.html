@@ -32,7 +32,7 @@
       <h1>Intro</h1>
       <p>
         Shining helps you creating presentations that you present from a web browser. The presentations
-        that it generates are entirely based in HTML, CSS, and Javascript, with a little help from CSS
+        that it generates are entirely based in HTML, CSS, with a little help from CSS
         <a href="http://www.w3.org/TR/css3-2d-transforms/">transforms</a> and
         <a href="http://www.w3.org/TR/css3-transitions/">transitions</a>, and <a href="jquery.com">jQuery</a>.
       </p>
@@ -41,15 +41,15 @@
       <h1>What makes a presentation?</h1>
       <p>
         A presentation is composed of:
-        <ul>
-          <li>A configuration file named <em>config.json</em>.</li>
-          <li>Slides, which are plain HTML files in the slides folder.</li>
-          <li>
-            An index file named <em>index.html</em> in the root presentation folder, which is where you
-            start a presentation.
-          </li>
-        </ul>
       </p>
+      <ul>
+        <li>A configuration file named <em>config.json</em>.</li>
+        <li>Slides, which are plain HTML files in the slides folder.</li>
+        <li>
+          An index file named <em>index.html</em> in the root presentation folder, which is where you
+          start a presentation from.
+        </li>
+      </ul>
     </section>
     <section id="configuration">
       <h1>Configuration</h1>
@@ -58,17 +58,17 @@
         guessed, it's a plain text file containing an object in <a href="http://www.jsonlint.com/">valid JSON</a>.
         It's important that it's valid (e.g.: no single quotes) as otherwise your presentation won't even start.
         Valid attributes are:
-        <ul>
-          <li>
-            slides: an array containing the name of the presentation's slides. If you're using the generator
-            to add slides, don't worry about editing it.
-          </li>
-          <li>
-            transitions: a string corresponding to one of the <a href="#">available transition effects</a>,
-            or <em>false</em> disables them altogether.
-          </li>
-        </ul>
       </p>
+      <ul>
+        <li>
+          slides: an array containing the name of the presentation's slides. If you're using the generator
+          to add slides, don't worry about editing it.
+        </li>
+        <li>
+          transitions: a string corresponding to one of the <a href="#">available transition effects</a>,
+          or <em>false</em> disables them altogether.
+        </li>
+      </ul>
     </section>
     <section id="slides">
       <h1>Slides</h1>
@@ -124,6 +124,14 @@
       </script>
       <p>This is handy if you want to schedule things you'd like to see happening at certain stages during a presentation.</p>
     </section>
+    <section id="styles">
+      <h1>Individual slide styles</h1>
+      <p>
+        If a corresponding CSS file exists, it will take effect for as long as a particular slide is loaded. For example, if
+        you have a slide named "intro", having a file <em>intro.css</em> in the <em>slides/</em> folder will make sure it
+        gets loaded along.
+      </p>
+    </section>
     <section id="vendor">
       <h1>Deploying</h1>
       <p>
@@ -158,7 +166,7 @@
     </section>
     <footer>
       <p>
-        Shining is written by <a href="http://crazyhollywood.org">Julio</a>. Find me on Twitter through
+        Shining is written by <a href="http://crazyhollywood.org">Julio</a>. Find me on Twitter as
         <a href="http://twitter.com/julio_ody">@julio_ody</a>.
       </p>
     </footer>
