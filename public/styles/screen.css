@@ -33,28 +33,23 @@ section p     { margin: 0.5em 0 }
 
 code  { 
   display: block; 
-  margin: 1em 0; 
-  padding: 10px; 
-  color: #49FF50;
-  background-color: #303030;
+  margin: 1em 0; padding: 10px; 
+  color: #49FF50; background-color: #303030;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
-.syntaxhighlighter code { display: inline }
 
-#construction {
-  display: none;  
-  position: fixed;
-  top: 5px;
-  left: 5px;
-  padding: 10px;
-  width: 250px;
+#construction       {
+  display: none;
+  position: fixed; top: 5px; left: 5px;
+  padding: 10px; width: 250px;
   background-color: #FF5049;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px
 }
+
 #construction .wink {
   color: #EEE;
   float: left;
@@ -70,10 +65,22 @@ code  {
   -webkit-animation-timing-function: linear;
 }
 
+.syntaxhighlighter code { display: inline }
+
 @-webkit-keyframes shines {
   0%    { text-shadow: none }
   25%   { text-shadow: rgb(255, 255, 255) -30px 0px 100px }
   50%   { text-shadow: rgb(255, 255, 255) 0px 0px 200px }
   75%   { text-shadow: rgb(255, 255, 255) 30px 0px 100px }
   100%  { text-shadow: none }
+}
+
+span.compat {
+  font-size: 0.6em;
+  background-color: #499DFF; color: #EEE;
+  padding: 2px;
+  text-shadow: none;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px  
 }

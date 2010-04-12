@@ -132,6 +132,13 @@
         gets loaded along.
       </p>
     </section>
+    <section id="navigating">
+      <h1>Navigating</h1>
+      <p>
+        You can navigate forward by pressing the <em>space key</em>. Navigation controls appear when you move the mouse near the
+        bottom of the screen.
+      </p>
+    </section>
     <section id="vendor">
       <h1>Deploying</h1>
       <p>
@@ -144,7 +151,7 @@
       <p>Then put this folder somewhere accessible via the web, point your browser to it, and you're set.</p>
     </section>
     <section id="effects">
-      <h1>Effects</h1>
+      <h1>How effects work</h1>
       <p>
         Effects are applied on elements by adding CSS classes to them. Effects are based on CSS transitions and/or transforms.
         What this means is they're likely to work on top notch engines such as <a href="http://webkit.org/">Webkit</a>, they
@@ -154,7 +161,59 @@
         That may or may not change in the near future. For now, stick to using decent web browsers when presenting, and perhaps
         relying more on content rather than how it looks ;-)
       </p>
-      <p><em>Proper documentation of effects is coming soon</em>.</p>
+      <p>
+        In general, you'll apply effects to an element in one of two circumstances: when you're editing a slide (in which case
+        you'd put the appropriate CSS class on it), or through a slide script using Javascript. With the former, the effect
+        will take place as soon as the slide gets shown, whereas the latter would happen whenever you programmed it to.
+      </p>
+      <p>So for example, in the code for a slide you could do:</p>
+      <script type="syntaxhighlighter" class="brush: html; gutter: false">
+      <h1 class="shines">This heading shines when the slide appears</h1>
+      <p>Further text for the slide</p>
+      </script>
+      <p>Or from inside a slide script, if you'd like that same heading to shine, but 2 seconds into the slide running:</p>
+      <script type="syntaxhighlighter" class="brush: js; gutter: false">
+      2, $('h1:first').effect('shines')
+      </script>      
+    </section>
+    <section id="effects-ref">
+      <h1>Effects reference</h1>
+      <p>
+        These are the currently available effects you can use. These are straight CSS class names you can add to elements in
+        order to apply the effect. Browser compatibility is outlined after the description.
+      </p>
+      <ul>
+        <li>
+          <em>fades-in-zoom-slow</em>: Fades in, slowly zooming in at the same time. <span class="compat">webkit</span>
+        </li>
+        <li>
+          <em>fades-in-zoom-quick</em>: Fades in, quickly zooming in at the same time. <span class="compat">webkit</span>
+        </li>
+        <li>
+          <em>appears-dramatically</em>: Fades in, cinema style. <span class="compat">webkit</span>
+        </li>
+        <li>
+          <em>speeds-in-left</em>: Slides in from right to left, with a speed-like effect. <span class="compat">webkit</span>
+        </li>
+        <li>
+          <em>speeds-in-right</em>: Slides in from left to right, with a speed-like effect. <span class="compat">webkit</span>
+        </li>
+        <li>
+          <em>dances</em>: Looping dance effect. <span class="compat">webkit</span>
+        </li>
+        <li>
+          <em>y-spin</em>: Spins once in the vertically. <span class="compat">webkit</span>
+        </li>
+        <li>
+          <em>x-spin</em>: Spins once in the horizontally. <span class="compat">webkit</span>
+        </li>
+      </ul>
+      <p>
+        <strong>Note:</strong> The sheer amount of Webkit-only effects is so because right Shining had originally being
+        conceived to work exclusively on Webkit. I'm progressing it towards engine independence. Also, note that by Webkit
+        I actually mean Safari or Google Chrome, and potentially the <a href="http://nightly.webkit.org/">nightly builds</a>
+        available from webkit.org. It's just shorter than explaining this everywhere I want to refer to 
+      </p>
     </section>
     <section id="contributing">
       <h1>Contributing</h1>
