@@ -1,0 +1,1 @@
+2, $('h1:first').effect('shines');
