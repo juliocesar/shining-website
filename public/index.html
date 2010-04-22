@@ -154,6 +154,26 @@
       <code>$ shine vendor</code>
       <p>Then put this folder somewhere accessible via the web, point your browser to it, and you're set.</p>
     </section>
+    <section id="heroku">
+      <h1>Deploying to Heroku</h1>
+      <p>
+        Deploying a Shining presentation to Heroku allows you to quickly host a presentation online. This can be handy if
+        for any reason you don't have a webserver handy to host it.
+      </p>
+      <p>In a presentation's directory, run:</p>
+      <code>
+        $ shine deploy
+      </code>
+      <p>You'll see some console output going. What matters is the bit that says something like this:</p>
+      <code>
+        -----> Heroku receiving push<br />
+        -----> Rack app detected<br />
+               Compiled slug size is 68K<br />
+        -----> Launching..... done<br />
+               http://glowing-snow-39.heroku.com deployed to Heroku
+      </code>
+      <p>In the case above, the url <em>http://glowing-snow-39.heroku.com</em> is where you can find your presentation.</p>
+    </section>
     <section id="effects">
       <h1>How effects work</h1>
       <p>
