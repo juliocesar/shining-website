@@ -1,8 +1,0 @@
-{
-  "transitions": "fade",
-  "slides": [
-    "welcome",
-    "second",
-    "third"
-  ]
-}
