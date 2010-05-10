@@ -1,0 +1,15 @@
+{
+  "plugins": [
+    "resize",
+    "syntaxhighlighter"
+  ],
+  "transitions": "fade",
+  "title": "Your presentation",
+  "slides": [
+    "welcome",
+    "apple",
+    "fat",
+    "withcode",
+    "end"
+  ]
+}
