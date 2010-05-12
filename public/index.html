@@ -31,6 +31,7 @@
       <code>$ sudo gem install shining</code>
       <p>Creating a new presentation:</p>
       <code>$ shine mypresentationdir</code>
+      <p>Shining will then copy all necessary files to run a presentation to it's directory.</p>
     </section>
     <section id="intro">
       <h1>Intro</h1>
@@ -63,25 +64,21 @@
         It's important that it's valid (e.g.: no single quotes) as otherwise your presentation won't even 
         start. Valid attributes are:
       </p>
-      <ul>
-        <li>
-          slides: an array containing the name of the presentation's slides. If you're using the generator
-          to add slides, don't worry about editing it.
-        </li>
-        <li>
-          transitions: a string corresponding to one of the <a href="#transitions">available transition 
-          effects</a>, or <em>false</em> disables them altogether.
-        </li>
-        <li>
-          plugins: a list of <a href="#plugins">plugins</a> that will be used with your presentation. By 
-          default, the <em>resize</em> and <em>syntaxhighlighter</em> plugins will get loaded, allowing for 
-          automatic font resizing based on screen dimensions and code syntax highlighting, respectively.
-        </li>
-        <li>
-          help: boolean. <em>false</em> disables the growl-like messages that appear on the top right hand
-          corner of the screen.
-        </li>
-      </ul>
+      <dl>
+        <dt>slides</dt>
+        <dd>an array containing the name of the presentation's slides. If you're using the generator
+        to add slides, don't worry about editing it.</dd>
+        <dt>transitions</dt>
+        <dd>a string corresponding to one of the <a href="#transitions">available transition 
+        effects</a>, or <em>false</em> disables them altogether.</dd>
+        <dt>plugins</dt>
+        <dd>a list of <a href="#plugins">plugins</a> that will be used with your presentation. By 
+        default, the <em>resize</em> and <em>syntaxhighlighter</em> plugins will get loaded, allowing for 
+        automatic font resizing based on screen dimensions and code syntax highlighting, respectively.</dd>
+        <dt>help</dt>
+        <dd>boolean. <em>false</em> disables the growl-like messages that appear on the top right hand
+        corner of the screen.</dd>
+      </dl>
     </section>
     <section id="slides">
       <h1>Slides</h1>
@@ -157,18 +154,15 @@
       <p>
         Transitions kick in as you switch from one slide to another. Available transitions are:
       </p>
-      <ul>
-        <li>
-          <em>fade</em>: Fades slides in/out.
-        </li>
-        <li>
-          <em>slide</em>: Slides a slide to the left, next one comes from the right.
-        </li>
-        <li>
-          <em>slice</em>: Slices the slide out. This neat effect doesn't work too well with Internet
-          Explorer, but it degrades nicely so it'll look like no transition effect is being used.
-        </li>
-      </ul>
+      <dl>
+        <dt>fade</dt>
+        <dd>Fades slides in/out.</dd>
+        <dt>slide</dt>
+        <dd>Slides a slide to the left, next one comes from the right.</dd>
+        <dt>slice</dt>
+        <dd>Slices the slide out. This neat effect doesn't work too well with Internet
+        Explorer, but it degrades nicely so it'll look like no transition effect is being used.</dd>
+      </dl>
       <p>If none is specified, slides will switch instantly.</p>
     </section>
     <section id="plugins">
@@ -184,23 +178,19 @@
         the natural order of things without needing to intertwine with Shining's code directly.
       </p>
       <p>
-        Currently the following events will occur:
+        Currently the following events are available:
       </p>
-      <ul>
-        <li>
-          <em>next</em>: triggered as the user requests the next slide.
-        </li>
-        <li>
-          <em>previous</em>: triggered as the user requests the previous slide.
-        </li>
-        <li>
-          <em>initialize</em>: triggered when the presentation starts.
-        </li>
-        <li>
-          <em>slideplay</em>: triggered when a slide plays, after the contents of the slide are loaded
-          onto the stage.
-        </li>
-      </ul>
+      <dl>
+        <dt>next</dt>
+        <dd>as the user requests the next slide.</dd>
+        <dt>previous</dt>
+        <dd>as the user requests the previous slide.</dd>
+        <dt>initialize</dt>
+        <dd>when the presentation starts.</dd>
+        <dt>slideplay</dt>
+        <dd>when a slide plays, after the contents of the slide are loaded
+        onto the stage.</dd>
+      </dl>
       <p>
         To make things more semantic, a method is provided for you to access these events. For instance:
       </p>

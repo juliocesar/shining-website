@@ -13,12 +13,16 @@ a:hover   { text-decoration: underline }
 a         { color: #499DFF; text-decoration: none }
 a:visited { color: #AB49FF }
 
-h1, h2, p, ul, ol { color: #EEEEEE; font-family: "Lucida Grande", Tahoma, serif; text-shadow: #000 2px 2px 0px }
-li, p             { line-height: 1.2em }
-em                { color: #FFAB49 }
+h1, h2, p, ul, ol, dl { color: #EEEEEE; font-family: "Lucida Grande", Tahoma, serif; text-shadow: #000 2px 2px 0px }
+li, p                 { line-height: 1.2em }
+em                    { color: #FFAB49 }
 
 ul      { list-style-type: square }
-ol, ul  { list-style-position: inside; margin: 5px 0 }
+ol, ul  { list-style-position: inside }
+
+dl  { background-color: #303030; padding: 1em }
+dt  { float: left; width: 100px; font-style: italic }
+dd  { margin: 0 0 10px 100px }
 
 header    { margin-bottom: 30px }
 header h1 { margin: 0.1em 0; font-size: 2.5em; }
@@ -29,7 +33,9 @@ footer p  { text-align: center; font-size: 0.8em }
 section             { margin-bottom: 20px }
 section:last-child  { margin-bottom: 0 }
 section h1    { font-size: 1.2em; margin: 0.4em 0 }
-section p     { margin: 0.5em 0 }
+section p,
+section ul,
+section dl    { margin: 0.5em 0 }
 
 code  { 
   display: block; 
