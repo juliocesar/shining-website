@@ -1,8 +1,5 @@
 {
-  "plugins": [
-    "resize",
-    "syntaxhighlighter"
-  ],
+  "plugins": ["syntaxhighlighter", "resize"],
   "transitions": "fade",
   "title": "Your presentation",
   "slides": [

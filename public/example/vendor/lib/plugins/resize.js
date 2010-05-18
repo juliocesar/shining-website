@@ -1,5 +1,4 @@
-// resize.js: Shining plugin for resizing the font sizes depending
-// on the available screen dimensions
+// resize.js: Shining plugin for resizing the stage's base font size depending on available screen dimensions
 
 $(window).resize(function() {
   $.throttle(function() {
@@ -18,6 +17,6 @@ $(window).resize(function() {
       $('#stage').css({fontSize: '180%'});
     } else if (width > 1280) {
       $('#stage').css({fontSize: '180%'});
-    }    
+    }       
   }, 500);
 })
