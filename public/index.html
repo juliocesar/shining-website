@@ -32,6 +32,23 @@
       <p>Creating a new presentation:</p>
       <code>$ shine mypresentationdir</code>
       <p>Shining will then copy all necessary files to run a presentation to it's directory.</p>
+      <p>
+        You can run a presentation locally by opening the <em>index.html</em> file in the presentation's root
+        directory, or run (port number can be whatever number of your choosing):
+      </p>
+      <code>
+        $ rackup -p 4567
+      </code>
+      <p>
+        and then point your browser to <em>http://localhost:4567</em>. <strong>NOTE:</strong> Google Chrome won't allow
+        you to play a presentation locally ever thanks to Javascript security restrictions. So if you're planning on
+        using Chrome, always take the rackup route.
+      </p>
+      <p>
+        Also, in order for the rackup command to be available, make sure you have the 
+        <a href="http://rubygems.org/gems/rack">Rack ruby gem</a> installed. To the best of my knowledge, any version
+        upwards of 0.9 will do the job.
+      </p>
     </section>
     <section id="intro">
       <h1>Intro</h1>
