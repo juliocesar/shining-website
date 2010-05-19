@@ -189,6 +189,18 @@
         gets loaded according to the name specified in a presentation's configuration file (e.g.: 
         <em>resize</em> loads <em>lib/plugins/resize.js</em>).
       </p>
+      <p>Currently available plugins are:</p>
+      <dl>
+        <dt>resize</dt>
+        <dd>automatic font sizing according to available screen dimensions.</dd>
+        <dt>syntaxhighlighter</dt>
+        <dd>
+          Adds <a href="http://alexgorbatchev.com/wiki/SyntaxHighlighter">SyntaxHighlighter</a> support. Refer
+          to documentation available on the original website for examples.
+        </dd>
+        <dt>iphone</dt>
+        <dd>Makes your presentation look nice, and behave well when viewed on an iPhone.</dd>
+      </dl>
       <p>
         Though you can write the scripts in any way you want, Shining itself publishes certain events, as
         in Javascript events, which exist among other reasons for plugins to be able to interfere with
@@ -209,7 +221,7 @@
         onto the stage.</dd>
       </dl>
       <p>
-        To make things more semantic, a method is provided for you to access these events. For instance:
+        To make things more readable, a method is provided for you to access these events. For instance:
       </p>
       <script type="syntaxhighlighter" class="brush: js; gutter: false">
         Shining.when('slideplay', function() {
