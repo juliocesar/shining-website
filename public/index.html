@@ -23,11 +23,15 @@
       <p>A toolkit for creating in-browser presentations.</p>
     </header>
     <section id="example">
-      <h1>Example</h1>
+      <header>
+        <h1>Example</h1>
+      </header>
       <p>A <a href="example/index.html">quick example</a> of a presentation using the default theme with fade transitions.</p>
     </section>
     <section id="quickstart">
-      <h1>Quickstart</h1>
+      <header>
+        <h1>Quickstart</h1>
+      </header>
       <p>Install via <a href="http://rubygems.org/">rubygems</a>:</p>
       <code>$ sudo gem install shining</code>
       <p>Creating a new presentation:</p>
@@ -47,7 +51,9 @@
       </p>
     </section>
     <section id="intro">
-      <h1>Intro</h1>
+      <header>
+        <h1>Intro</h1>
+      </header>
       <p>
         Shining helps you creating presentations that you can view from a web browser. The presentations
         that it generates are entirely based in HTML, CSS, with a little help from CSS
@@ -56,7 +62,9 @@
       </p>
     </section>
     <section id="composed">
-      <h1>What makes a presentation?</h1>
+      <header>
+        <h1>What makes a presentation?</h1>
+      </header>
       <p>
         A presentation is composed of:
       </p>
@@ -70,7 +78,9 @@
       </ul>
     </section>
     <section id="configuration">
-      <h1>Configuration</h1>
+      <header>
+        <h1>Configuration</h1>
+      </header>
       <p>
         Presentation-wide configuration sits in the <em>config.json</em> file, which is a plain text file  
         containing an object in <a href="http://www.jsonlint.com/">valid JSON</a>.
@@ -96,7 +106,9 @@
       </dl>
     </section>
     <section id="slides">
-      <h1>Slides</h1>
+      <header>
+        <h1>Slides</h1>
+      </header>
       <p>Easy way first. Change the directory to the presentation's directory first. Then:</p>
       <code>$ shine slide mynewslide</code>
       <p>
@@ -110,7 +122,9 @@
       </p>
     </section>
     <section id="templates">
-      <h1>Alternative formats</h1>
+      <header>
+        <h1>Alternative formats</h1>
+      </header>
       <p>
         Shining supports <a href="http://haml-lang.com/">Haml</a> or
         <a href="http://daringfireball.net/projects/markdown/">Markdown</a> slides other than HTML.
@@ -121,7 +135,9 @@
       <code>$ shine slide myslide markdown</code>
     </section>
     <section id="scripts">
-      <h1>Slide scripts</h1>
+      <header>
+        <h1>Slide scripts</h1>
+      </header>
       <p>
         Slides can have an associated script which you can use to trigger certain actions (e.g.: effects) at a 
         predetermined time. If you used the generator to create a slide, you'll notice a .js file got created 
@@ -148,7 +164,9 @@
       <p>This is handy if you want to schedule things you'd like to see happening at certain stages during a presentation.</p>
     </section>
     <section id="styles">
-      <h1>Individual slide styles</h1>
+      <header>
+        <h1>Individual slide styles</h1>
+      </header>
       <p>
         If a corresponding CSS file exists, it will take effect for as long as a particular slide is loaded. 
         For example, if you have a slide named "intro", having a file <em>intro.css</em> in the 
@@ -156,14 +174,18 @@
       </p>
     </section>
     <section id="navigating">
-      <h1>Navigating</h1>
+      <header>
+        <h1>Navigating</h1>
+      </header>
       <p>
         You can navigate forward by pressing the <em>space key</em>, or the keyboard right arrow. Left arrow 
         navigates to the previous slide.
       </p>
     </section>
     <section id="transitions">
-      <h1>Transitions</h1>
+      <header>
+        <h1>Transitions</h1>
+      </header>
       <p>
         Transitions kick in as you switch from one slide to another. Available transitions are:
       </p>
@@ -179,7 +201,9 @@
       <p>If none is specified, slides will switch instantly.</p>
     </section>
     <section id="plugins">
-      <h1>Plugins</h1>
+      <header>
+        <h1>Plugins</h1>
+      </header>
       <p>
         Plugins enhance Shining's default functionalities. They consist simply of a Javascript file that 
         gets loaded according to the name specified in a presentation's configuration file (e.g.: 
@@ -229,7 +253,9 @@
       </p>
     </section>
     <section id="heroku">
-      <h1>Deploying to Heroku</h1>
+      <header>
+        <h1>Deploying to Heroku</h1>
+      </header>
       <p>
         Deploying a Shining presentation to Heroku allows you to quickly host a presentation online. This can 
         be handy if for any reason you don't have a web server handy to host it.
@@ -238,18 +264,19 @@
       <code>
         $ shine deploy
       </code>
-      <p>You'll see some console output going. What matters is the bit that says something like this:</p>
+      <p>
+        Shining will create a URL friendly name based on the name of your presentation. You can override that by
+        passing an argument to be used as the app name, as in:
+      </p>
       <code>
-        -----> Heroku receiving push<br />
-        -----> Rack app detected<br />
-               Compiled slug size is 68K<br />
-        -----> Launching..... done<br />
-               http://glowing-snow-39.heroku.com deployed to Heroku
+        $ shine deploy "peanut butter jelly time"
       </code>
-      <p>In the case above, the url <em>http://glowing-snow-39.heroku.com</em> is where you can find your presentation.</p>
+      <p>Check the console output for the URL where your presentation is hosted.</p>
     </section>
     <section id="contributing">
-      <h1>Contributing</h1>
+      <header>
+        <h1>Contributing</h1>
+      </header>
       <p>
         Shining is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>. The code
         is hosted on <a href="http://github.com/juliocesar/shining">Github</a>. Feel free to report bugs using Github's issue
