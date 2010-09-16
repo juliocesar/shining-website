@@ -21,7 +21,7 @@ h1, h2 { font-weight: bold }
 html  { -webkit-font-smoothing: antialiased }
 a:hover, a:active, a { outline: none }
 a:link            { -webkit-tap-highlight-color: #FF5E99 }
-::-moz-selection{ background: #F400BF; color: #FFF; text-shadow: none }
+::-moz-selection{ background: #CCCCCC; color: #FFF; text-shadow: none }
 ::selection { background: #CCCCCC; color: #FFF; text-shadow: none }
 .ie7 img    { -ms-interpolation-mode: bicubic }
 ul { list-style-type: none; list-style-position: inside }
@@ -34,9 +34,9 @@ ul { list-style-type: none; list-style-position: inside }
 html    { background: #FFFFFF url(/img/noise.png) repeat scroll }
 body    { width: 950px; margin: 0 auto; padding: 10em 0 0; font-family: 'refrigerator-deluxe-1'; font-weight: 400; text-shadow: #FFF 1px 1px 0px; color: #4d4d4d;}
 h1, h2  { font-family: 'mostra-nuova-1'; font-weight: 400 }
-a       { text-decoration: none; border-bottom: 1px dotted; color: #F7CE68 }
+a       { text-decoration: none; border-bottom: 1px dotted; color: #F7B168 }
 span.love { font-family: Arial, sans-serif }
-code    { font-family: 'lemonde-courrier-1'; font-weight: 400; text-shadow: none; font-size: 1.2em }
+section > code    { display: block; font-family: 'lemonde-courrier-1'; font-weight: 400; text-shadow: none; padding: 0.5em; font-size: 1.2em; background: #FFFFFF; background: rgba(255, 255, 255, .5); -webkit-box-shadow: 1px 1px 1px #CCC; -moz-box-shadow: 1px 1px 1px #CCC; box-shadow: #1px 1px 1px #CCC }
 
 header, section { margin-bottom: 2em }
 section:last-child { margin-bottom: 6em }
@@ -44,10 +44,12 @@ section:last-child { margin-bottom: 6em }
 dt  { float: left; width: 20% }
 dd  { margin: 0 0 1em 20% }
 
-header h1     { font-size: 6em }
+header h1     { position: relative; margin-right: 35px; font-size: 6em }
 header h2     { font-size: 2em }
 header hgroup { margin-top: 4em; float: right; text-align: center }
-#nivo         { float: left; width: 400px; margin-right: 2em }
+#version      { position: absolute; top: 18px; right: -10px; display: inline-block; height: 68px; width: 100px; padding-top: 19px; font-family: 'lemonde-courrier-1'; font-size: 25px; background: url(/img/splash.png) top center no-repeat }
+#version      { text-shadow: none; -webkit-transform: rotate(15deg); -moz-transform: rotate(15deg); transform: rotate(15deg) }
+#nivo         { float: left; width: 400px; margin-right: 2em; background: url(/img/loading.gif) no-repeat 50% 50% }
 #nivo img     { display: none; width: 450px; height: 250px }
 #nivo p       { display: none }
 
@@ -67,77 +69,25 @@ section ul    { list-style-type: disc }
  * http://www.opensource.org/licenses/mit-license.php
  * 
  * March 2010
- */
- 
- 
-/* The Nivo Slider styles */
-.nivoSlider {	position:relative }
-.nivoSlider img {	position:absolute; top:0px;	left:0px; }
+ */ 
+.nivoSlider { position: relative }
+.nivoSlider img { position: absolute; top: 0px; left: 0px; }
 /* If an image is wrapped in a link */
-.nivoSlider a.nivo-imageLink {
-	position:absolute;
-	top:0px;
-	left:0px;
-	width:100%;
-	height:100%;
-	border:0;
-	padding:0;
-	margin:0;
-	z-index:60;
-	display:none;
-}
+.nivoSlider a.nivo-imageLink { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; z-index: 60; display: none; }
 /* The slices in the Slider */
-.nivo-slice {
-	display:block;
-	position:absolute;
-	z-index:50;
-	height:100%;
-}
+.nivo-slice { display: block; position: absolute; z-index: 50; height: 100%; }
 /* Caption styles */
-.nivo-caption {
-	position:absolute;
-	left:0px;
-	bottom:0px;
-	background:#000;
-	background: rgba(0, 0, 0, .5);
-	color:#fff;
-	opacity:0.8; /* Overridden by captionOpacity setting */
-	width:100%;
-	z-index:89;
-}
-.nivo-caption p {
-	padding:5px;
-	margin:0;
-}
-.nivo-caption a {
-	display:inline !important;
-}
-.nivo-html-caption {
-    display:none;
-}
+.nivo-caption { position: absolute; left: 0px; bottom: 0px; background: #000; background: rgba(0, 0, 0, .5); color: #fff; opacity: 0.8; /* Overridden by captionOpacity setting */: ; width: 100%; z-index: 89; }
+.nivo-caption p { padding: 5px; margin: 0; }
+.nivo-caption a { display: inline !important }
+.nivo-html-caption { display: none }
 /* Direction nav styles (e.g. Next & Prev) */
-.nivo-directionNav a {
-	position:absolute;
-	top:45%;
-	z-index:99;
-	cursor:pointer;
-}
-.nivo-prevNav {
-	left:0px;
-}
-.nivo-nextNav {
-	right:0px;
-}
+.nivo-directionNav a { position: absolute; top: 45%; z-index: 99; cursor: pointer; }
+.nivo-prevNav { left: 0px }
+.nivo-nextNav { right: 0px }
 /* Control nav styles (e.g. 1,2,3...) */
-.nivo-controlNav a {
-	position:relative;
-	z-index:99;
-	cursor:pointer;
-}
-.nivo-controlNav a.active {
-	font-weight:bold;
-}
-
+.nivo-controlNav a { position: relative; z-index: 99; cursor: pointer; }
+.nivo-controlNav a.active { font-weight: bold }
 
 
 /**
@@ -156,315 +106,108 @@ section ul    { list-style-type: disc }
  * @license
  * Dual licensed under the MIT and GPL licenses.
  */
-.syntaxhighlighter a,
-.syntaxhighlighter div,
-.syntaxhighlighter code,
-.syntaxhighlighter table,
-.syntaxhighlighter table td,
-.syntaxhighlighter table tr,
-.syntaxhighlighter table tbody,
-.syntaxhighlighter table thead,
-.syntaxhighlighter table caption,
-.syntaxhighlighter textarea {
-  -moz-border-radius: 0 0 0 0 !important;
-  -webkit-border-radius: 0 0 0 0 !important;
-  background: none !important;
-  border: 0 !important;
-  bottom: auto !important;
-  float: none !important;
-  height: auto !important;
-  left: auto !important;
-  line-height: 1.1em !important;
-  margin: 0 !important;
-  outline: 0 !important;
-  overflow: visible !important;
-  padding: 0 !important;
-  position: static !important;
-  right: auto !important;
-  text-align: left !important;
-  top: auto !important;
-  vertical-align: baseline !important;
-  width: auto !important;
-  box-sizing: content-box !important;
-  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
-  font-weight: normal !important;
-  font-style: normal !important;
-  font-size: 1em !important;
-  min-height: inherit !important;
-  min-height: auto !important;
-}
-
-.syntaxhighlighter {
-  width: 100% !important;
-  margin: 1em 0 1em 0 !important;
-  position: relative !important;
-  overflow: auto !important;
-  font-size: 1em !important;
-}
-.syntaxhighlighter.source {
-  overflow: hidden !important;
-}
-.syntaxhighlighter .bold {
-  font-weight: bold !important;
-}
-.syntaxhighlighter .italic {
-  font-style: italic !important;
-}
-.syntaxhighlighter .line {
-  white-space: pre !important;
-}
-.syntaxhighlighter table {
-  width: 100% !important;
-}
-.syntaxhighlighter table caption {
-  text-align: left !important;
-  padding: .5em 0 0.5em 1em !important;
-}
-.syntaxhighlighter table td.code {
-  width: 100% !important;
-}
-.syntaxhighlighter table td.code .container {
-  position: relative !important;
-}
-.syntaxhighlighter table td.code .container textarea {
-  box-sizing: border-box !important;
-  position: absolute !important;
-  left: 0 !important;
-  top: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  border: none !important;
-  background: white !important;
-  padding-left: 1em !important;
-  overflow: hidden !important;
-  white-space: pre !important;
-}
-.syntaxhighlighter table td.gutter .line {
-  text-align: right !important;
-  padding: 0 0.5em 0 1em !important;
-}
-.syntaxhighlighter table td.code .line {
-  padding: 0 1em !important;
-}
-.syntaxhighlighter.nogutter td.code .container textarea, .syntaxhighlighter.nogutter td.code .line {
-  padding-left: 0em !important;
-}
-.syntaxhighlighter.show {
-  display: block !important;
-}
-.syntaxhighlighter.collapsed table {
-  display: none !important;
-}
-.syntaxhighlighter.collapsed .toolbar {
-  padding: 0.1em 0.8em 0em 0.8em !important;
-  font-size: 1em !important;
-  position: static !important;
-  width: auto !important;
-  height: auto !important;
-}
-.syntaxhighlighter.collapsed .toolbar span {
-  display: inline !important;
-  margin-right: 1em !important;
-}
-.syntaxhighlighter.collapsed .toolbar span a {
-  padding: 0 !important;
-  display: none !important;
-}
-.syntaxhighlighter.collapsed .toolbar span a.expandSource {
-  display: inline !important;
-}
-.syntaxhighlighter .toolbar {
-  position: absolute !important;
-  right: 1px !important;
-  top: 1px !important;
-  width: 11px !important;
-  height: 11px !important;
-  font-size: 10px !important;
-  z-index: 10 !important;
-}
-.syntaxhighlighter .toolbar span.title {
-  display: inline !important;
-}
-.syntaxhighlighter .toolbar a {
-  display: block !important;
-  text-align: center !important;
-  text-decoration: none !important;
-  padding-top: 1px !important;
-}
-.syntaxhighlighter .toolbar a.expandSource {
-  display: none !important;
-}
-.syntaxhighlighter.ie {
-  font-size: .9em !important;
-  padding: 1px 0 1px 0 !important;
-}
-.syntaxhighlighter.ie .toolbar {
-  line-height: 8px !important;
-}
-.syntaxhighlighter.ie .toolbar a {
-  padding-top: 0px !important;
-}
-.syntaxhighlighter.printing .line.alt1 .content,
-.syntaxhighlighter.printing .line.alt2 .content,
-.syntaxhighlighter.printing .line.highlighted .number,
-.syntaxhighlighter.printing .line.highlighted.alt1 .content,
-.syntaxhighlighter.printing .line.highlighted.alt2 .content {
-  background: none !important;
-}
-.syntaxhighlighter.printing .line .number {
-  color: #bbbbbb !important;
-}
-.syntaxhighlighter.printing .line .content {
-  color: black !important;
-}
-.syntaxhighlighter.printing .toolbar {
-  display: none !important;
-}
-.syntaxhighlighter.printing a {
-  text-decoration: none !important;
-}
-.syntaxhighlighter.printing .plain, .syntaxhighlighter.printing .plain a {
-  color: black !important;
-}
-.syntaxhighlighter.printing .comments, .syntaxhighlighter.printing .comments a {
-  color: #008200 !important;
-}
-.syntaxhighlighter.printing .string, .syntaxhighlighter.printing .string a {
-  color: blue !important;
-}
-.syntaxhighlighter.printing .keyword {
-  color: #006699 !important;
-  font-weight: bold !important;
-}
-.syntaxhighlighter.printing .preprocessor {
-  color: gray !important;
-}
-.syntaxhighlighter.printing .variable {
-  color: #aa7700 !important;
-}
-.syntaxhighlighter.printing .value {
-  color: #009900 !important;
-}
-.syntaxhighlighter.printing .functions {
-  color: #ff1493 !important;
-}
-.syntaxhighlighter.printing .constants {
-  color: #0066cc !important;
-}
-.syntaxhighlighter.printing .script {
-  font-weight: bold !important;
-}
-.syntaxhighlighter.printing .color1, .syntaxhighlighter.printing .color1 a {
-  color: gray !important;
-}
-.syntaxhighlighter.printing .color2, .syntaxhighlighter.printing .color2 a {
-  color: #ff1493 !important;
-}
-.syntaxhighlighter.printing .color3, .syntaxhighlighter.printing .color3 a {
-  color: red !important;
-}
-.syntaxhighlighter.printing .break, .syntaxhighlighter.printing .break a {
-  color: black !important;
-}
-
-.syntaxhighlighter {
-  background-color: white !important;
-}
-.syntaxhighlighter .line.alt1 {
-  background-color: white !important;
-}
-.syntaxhighlighter .line.alt2 {
-  background-color: white !important;
-}
-.syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlighted.alt2 {
-  background-color: #e0e0e0 !important;
-}
-.syntaxhighlighter .line.highlighted.number {
-  color: black !important;
-}
-.syntaxhighlighter table caption {
-  color: black !important;
-}
-.syntaxhighlighter .gutter {
-  color: #afafaf !important;
-}
-.syntaxhighlighter .gutter .line {
-  border-right: 3px solid #6ce26c !important;
-}
-.syntaxhighlighter .gutter .line.highlighted {
-  background-color: #6ce26c !important;
-  color: white !important;
-}
-.syntaxhighlighter.printing .line .content {
-  border: none !important;
-}
-.syntaxhighlighter.collapsed {
-  overflow: visible !important;
-}
-.syntaxhighlighter.collapsed .toolbar {
-  color: blue !important;
-  background: white !important;
-  border: 1px solid #6ce26c !important;
-}
-.syntaxhighlighter.collapsed .toolbar a {
-  color: blue !important;
-}
-.syntaxhighlighter.collapsed .toolbar a:hover {
-  color: red !important;
-}
-.syntaxhighlighter .toolbar {
-  color: white !important;
-  background: #6ce26c !important;
-  border: none !important;
-}
-.syntaxhighlighter .toolbar a {
-  color: white !important;
-}
-.syntaxhighlighter .toolbar a:hover {
-  color: black !important;
-}
-.syntaxhighlighter .plain, .syntaxhighlighter .plain a {
-  color: black !important;
-}
-.syntaxhighlighter .comments, .syntaxhighlighter .comments a {
-  color: #008200 !important;
-}
-.syntaxhighlighter .string, .syntaxhighlighter .string a {
-  color: blue !important;
-}
-.syntaxhighlighter .keyword {
-  color: #006699 !important;
-}
-.syntaxhighlighter .preprocessor {
-  color: gray !important;
-}
-.syntaxhighlighter .variable {
-  color: #aa7700 !important;
-}
-.syntaxhighlighter .value {
-  color: #009900 !important;
-}
-.syntaxhighlighter .functions {
-  color: #ff1493 !important;
-}
-.syntaxhighlighter .constants {
-  color: #0066cc !important;
-}
-.syntaxhighlighter .script {
-  font-weight: bold !important;
-  color: #006699 !important;
-  background-color: none !important;
-}
-.syntaxhighlighter .color1, .syntaxhighlighter .color1 a {
-  color: gray !important;
-}
-.syntaxhighlighter .color2, .syntaxhighlighter .color2 a {
-  color: #ff1493 !important;
-}
-.syntaxhighlighter .color3, .syntaxhighlighter .color3 a {
-  color: red !important;
-}
-
-.syntaxhighlighter .keyword {
-  font-weight: bold !important;
-}
+ .syntaxhighlighter a,
+ .syntaxhighlighter div,
+ .syntaxhighlighter code,
+ .syntaxhighlighter table,
+ .syntaxhighlighter table td,
+ .syntaxhighlighter table tr,
+ .syntaxhighlighter table tbody,
+ .syntaxhighlighter table thead,
+ .syntaxhighlighter table caption,
+ .syntaxhighlighter textarea { -moz-border-radius: 0 0 0 0 !important; -webkit-border-radius: 0 0 0 0 !important; background: none !important; border: 0 !important; bottom: auto !important; float: none !important; height: auto !important; left: auto !important; line-height: 1.1em !important; margin: 0 !important; outline: 0 !important; overflow: visible !important; padding: 0 !important; position: static !important; right: auto !important; text-align: left !important; top: auto !important; vertical-align: baseline !important; width: auto !important; box-sizing: content-box !important; font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important; font-weight: normal !important; font-style: normal !important; font-size: 1em !important; min-height: inherit !important; min-height: auto !important; }
+ .syntaxhighlighter { width: 100% !important; margin: 1em 0 1em 0 !important; position: relative !important; overflow: hidden !important; font-size: 1.2em !important; }
+ .syntaxhighlighter.source { overflow: hidden !important }
+ .syntaxhighlighter .bold { font-weight: bold !important }
+ .syntaxhighlighter .italic { font-style: italic !important }
+ .syntaxhighlighter .line { white-space: pre !important }
+ .syntaxhighlighter table { width: 100% !important }
+ .syntaxhighlighter table caption { text-align: left !important; padding: .5em 0 0.5em 1em !important; }
+ .syntaxhighlighter table td.code { width: 100% !important }
+ .syntaxhighlighter table td.code .container { position: relative !important }
+ .syntaxhighlighter table td.code .container textarea { box-sizing: border-box !important; position: absolute !important; left: 0 !important; top: 0 !important; width: 100% !important; height: 100% !important; border: none !important; background: white !important; padding-left: 1em !important; overflow: hidden !important; white-space: pre !important; }
+ .syntaxhighlighter table td.gutter .line { text-align: right !important; padding: 0 0.5em 0 1em !important; }
+ .syntaxhighlighter table td.code .line { padding: 0 1em !important }
+ .syntaxhighlighter.nogutter td.code .container textarea,
+ .syntaxhighlighter.nogutter td.code .line { padding-left: 0em !important }
+ .syntaxhighlighter.show { display: block !important }
+ .syntaxhighlighter.collapsed table { display: none !important }
+ .syntaxhighlighter.collapsed .toolbar { padding: 0.1em 0.8em 0em 0.8em !important; font-size: 1em !important; position: static !important; width: auto !important; height: auto !important; }
+ .syntaxhighlighter.collapsed .toolbar span { display: inline !important; margin-right: 1em !important; }
+ .syntaxhighlighter.collapsed .toolbar span a { padding: 0 !important; display: none !important; }
+ .syntaxhighlighter.collapsed .toolbar span a.expandSource { display: inline !important }
+ .syntaxhighlighter .toolbar { position: absolute !important; right: 1px !important; top: 1px !important; width: 11px !important; height: 11px !important; font-size: 10px !important; z-index: 10 !important; }
+ .syntaxhighlighter .toolbar span.title { display: inline !important }
+ .syntaxhighlighter .toolbar a { display: block !important; text-align: center !important; text-decoration: none !important; padding-top: 1px !important; }
+ .syntaxhighlighter .toolbar a.expandSource { display: none !important }
+ .syntaxhighlighter.ie { font-size: .9em !important; padding: 1px 0 1px 0 !important; }
+ .syntaxhighlighter.ie .toolbar { line-height: 8px !important }
+ .syntaxhighlighter.ie .toolbar a { padding-top: 0px !important }
+ .syntaxhighlighter.printing .line.alt1 .content,
+ .syntaxhighlighter.printing .line.alt2 .content,
+ .syntaxhighlighter.printing .line.highlighted .number,
+ .syntaxhighlighter.printing .line.highlighted.alt1 .content,
+ .syntaxhighlighter.printing .line.highlighted.alt2 .content { background: none !important }
+ .syntaxhighlighter.printing .line .number { color: #bbbbbb !important }
+ .syntaxhighlighter.printing .line .content { color: black !important }
+ .syntaxhighlighter.printing .toolbar { display: none !important }
+ .syntaxhighlighter.printing a { text-decoration: none !important }
+ .syntaxhighlighter.printing .plain,
+ .syntaxhighlighter.printing .plain a { color: black !important }
+ .syntaxhighlighter.printing .comments,
+ .syntaxhighlighter.printing .comments a { color: #008200 !important }
+ .syntaxhighlighter.printing .string,
+ .syntaxhighlighter.printing .string a { color: blue !important }
+ .syntaxhighlighter.printing .keyword { color: #006699 !important; font-weight: bold !important; }
+ .syntaxhighlighter.printing .preprocessor { color: gray !important }
+ .syntaxhighlighter.printing .variable { color: #aa7700 !important }
+ .syntaxhighlighter.printing .value { color: #009900 !important }
+ .syntaxhighlighter.printing .functions { color: #ff1493 !important }
+ .syntaxhighlighter.printing .constants { color: #0066cc !important }
+ .syntaxhighlighter.printing .script { font-weight: bold !important }
+ .syntaxhighlighter.printing .color1,
+ .syntaxhighlighter.printing .color1 a { color: gray !important }
+ .syntaxhighlighter.printing .color2,
+ .syntaxhighlighter.printing .color2 a { color: #ff1493 !important }
+ .syntaxhighlighter.printing .color3,
+ .syntaxhighlighter.printing .color3 a { color: red !important }
+ .syntaxhighlighter.printing .break,
+ .syntaxhighlighter.printing .break a { color: black !important }
+ .syntaxhighlighter { background-color: white !important }
+ .syntaxhighlighter .line.alt1 { background-color: white !important }
+ .syntaxhighlighter .line.alt2 { background-color: white !important }
+ .syntaxhighlighter .line.highlighted.alt1,
+ .syntaxhighlighter .line.highlighted.alt2 { background-color: #e0e0e0 !important }
+ .syntaxhighlighter .line.highlighted.number { color: black !important }
+ .syntaxhighlighter table caption { color: black !important }
+ .syntaxhighlighter .gutter { color: #afafaf !important }
+ .syntaxhighlighter .gutter .line { border-right: 3px solid #6ce26c !important }
+ .syntaxhighlighter .gutter .line.highlighted { background-color: #6ce26c !important; color: white !important; }
+ .syntaxhighlighter.printing .line .content { border: none !important }
+ .syntaxhighlighter.collapsed { overflow: visible !important }
+ .syntaxhighlighter.collapsed .toolbar { color: blue !important; background: white !important; border: 1px solid #6ce26c !important; }
+ .syntaxhighlighter.collapsed .toolbar a { color: blue !important }
+ .syntaxhighlighter.collapsed .toolbar a:hover { color: red !important }
+ .syntaxhighlighter .toolbar { display: none; color: white !important; background: #6ce26c !important; border: none !important; }
+ .syntaxhighlighter .toolbar a { color: white !important }
+ .syntaxhighlighter .toolbar a:hover { color: black !important }
+ .syntaxhighlighter .plain,
+ .syntaxhighlighter .plain a { color: black !important }
+ .syntaxhighlighter .comments,
+ .syntaxhighlighter .comments a { color: #008200 !important }
+ .syntaxhighlighter .string,
+ .syntaxhighlighter .string a { color: blue !important }
+ .syntaxhighlighter .keyword { color: #006699 !important }
+ .syntaxhighlighter .preprocessor { color: gray !important }
+ .syntaxhighlighter .variable { color: #aa7700 !important }
+ .syntaxhighlighter .value { color: #009900 !important }
+ .syntaxhighlighter .functions { color: #ff1493 !important }
+ .syntaxhighlighter .constants { color: #0066cc !important }
+ .syntaxhighlighter .script { font-weight: bold !important; color: #006699 !important; background-color: none !important; }
+ .syntaxhighlighter .color1,
+ .syntaxhighlighter .color1 a { color: gray !important }
+ .syntaxhighlighter .color2,
+ .syntaxhighlighter .color2 a { color: #ff1493 !important }
+ .syntaxhighlighter .color3,
+ .syntaxhighlighter .color3 a { color: red !important }
+ .syntaxhighlighter .keyword { font-weight: bold !important }
