@@ -40,7 +40,7 @@
     <code>
       $ sudo gem install shining
     </code>
-    <p>Creating a new presentation</p>
+    <p>Creating a new presentation:</p>
     <code>
       $ shine mypresentationdir
     </code>
@@ -103,7 +103,7 @@
       </dd>
       <dt>plugins</dt>
       <dd>
-        A list of plugins that will be used. By default, the <a href="#resize">resize</a> and <a href="#iphone">syntaxhighlighter</a> plugins will get loaded.
+        A list of plugins that will be used. By default, the <a href="#plugins">resize</a> and <a href="#plugins">iphone</a> plugins will get loaded.
       </dd>
       <dt>title</dt>
       <dd>A title for the presentation.</dd>
@@ -137,6 +137,36 @@
     <code>
       $ shine slide mynewslide markdown
     </code>
+  </section>
+  <section id="steps">
+    <h1>Steps</h1>
+    <p>
+      You may want to progressively show the contents of a slide. Shining addresses that
+      as "steps". A step is, by default, hidden. Trying to advance to the next slide
+      will show the next step in the order the slide is written. That is, it follows the order 
+      in the DOM.
+    </p>
+    <p>
+      Any element can be a step. Just add a CSS class named <em>step</em> to it and you're set.
+    </p>
+  </section>
+  <section id="notes">
+    <h1>Notes</h1>
+    <p>
+      Content that is tangential, though related, to the point presented in a slide can be
+      added to it as a note. That is appropriate, say, for adding links which you believe
+      might help reinforcing the argument being presented
+    </p>
+    <p>
+      To add a note to a slide, you need to add a <em>&lt;aside&gt;</em> tag. The contents
+      of this tag will be shown in a balloon at the bottom right hand corner of the screen.
+    </p>
+    <p>Like so:</p>
+    <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+      <h1>My slide</h1>
+      <p>Something important.</p>
+      <aside>And this is a <a href="#">useless link</a></aside>
+    ]]></script>    
   </section>
   <section id="slide-scripts">
     <h1>Slide scripts</h1>
@@ -202,6 +232,25 @@
       </dd>
     </dl>
   </section>
+  <section id="themes">
+    <h1>Themes</h1>
+    <p>
+      Shining comes with 2 themes: <em>default</em> and <em>slidedown</em> (vaguely mimics
+      the looks of <a href="http://nakajima.github.com/slidedown/#0">slidedown</a>, another HTML
+      presentation framework).
+    </p>
+    <p>
+      You can find examples of both by clicking the slider at the top of this page. The one
+      that's predominantly white is <em>slidedown</em>.
+    </p>
+    <p>
+      A third custom theme named <em>rain</em> was built specifically for my presentation on
+      <a href="http://css-progressive-enhancement.heroku.com">CSS Progressive Enhancement</a>,
+      at <a href="http://rubyonrails.com.au/">RORO Sydney</a> on September 2010. It suits
+      as a good example of how easy it is to build a custom theme for Shining. Source
+      for it can be found <a href="http://github.com/juliocesar/css-progressive-enhancement/blob/master/vendor/themes/rain.css">here</a>.
+    </p>
+  </section>
   <section id="heroku">
     <h1>Deploying to Heroku</h1>
     <p>
@@ -225,7 +274,7 @@
     <h1>Contributing</h1>
     <p>
       Shining is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>. The code is hosted on 
-      <a href="http://github.com/juliocesar/shining">GitHub</a>. Feel free to report bugs using Github's issue tracker. 
+      <a href="http://github.com/juliocesar/shining">GitHub</a>. Please report issues using GitHub's issue tracker. 
     </p>
   </section>
   <section id="author">
