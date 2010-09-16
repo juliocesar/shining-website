@@ -8,15 +8,235 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="stylesheet" href="css/zestyles.css" />
-    <script src="js/modernizr-1.5.min.js"></script>
+    <script src="/js/modernizr-1.5.min.js"></script>
   </head>
   <!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
   <!--[if IE 7 ]>    <body class="ie7"> <![endif]-->
   <!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
   <!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
   <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
+  <header>
+    <div id="nivo">
+      <a href="http://css-progressive-enhancement.heroku.com/">
+        <img src="/img/progressive.png"/>
+      </a>
+      <a href="http://preso-rack-bundle.heroku.com/">
+        <img src="/img/bundle.png"/>
+      </a>
+      <a href="http://sydjs-architecting.heroku.com/">
+        <img src="/img/architecting.png" alt="foo"/>
+      </a>
+      <img src="/img/idevices.png" title="supports-idevices"/>
+    </div>
+    <hgroup>
+      <h1>Shining</h1>
+      <h2>A toolkit for building presentations in HTML</h2>
+    </hgroup>
+    <div class="clearfix"></div>
+  </header>
+  <section id="quickstart">
+    <h1>Quick start</h1>
+    <p>Install via <a href="http://rubygems.org">rubygems</a>:</p>
+    <code>
+      $ sudo gem install shining
+    </code>
+    <p>Creating a new presentation</p>
+    <code>
+      $ shine mypresentationdir
+    </code>
+    <p>
+      Shining will then copy all necessary files to run a presentation to the <em>mypresentationdir</em> directory.
+      To run the presentation, from inside the presentation's directory, run:
+    </p>
+    <code>
+      $ shine go
+    </code>
+    <p>To view it, point your browser to <em>http://localhost:4567</em>.</p>
+    <p>BONUS: Host it on <a href="http://heroku.com">Heroku</a> by running:</p>
+    <code>
+      $ shine deploy
+    </code>
+    <p>Win!</p>
+  </section>
+  <section id="long-story">
+    <h1>The long story</h1>
+    <p>
+      Shining consists of a generator, the command <em>shine</em>, and a basic set of JavaScripts and CSS. That
+      alone will give you a working system for creating and showing slides from inside a web browser. 
+      From there, you can use  a <a href="#themes">theme</a> (the default theme is there by, err, default), customize it, 
+      or even modify Shining so it does what you'd like.
+    </p>
+    <p>
+      Shining also features brain-dead easy deployments to <a href="http://heroku.com">Heroku</a>, so you can 
+      host your presentations as an application for free, provided you have an account.
+    </p>
+  </section>
+  <section id="structure">
+    <h1>Structure</h1>
+    <p>A presentation is composed of:</p>
+    <ul>
+      <li>A configuration file named <em>config.json</em>.</li>
+      <li>
+        Slides, which sit in the <em>slides</em> folder and can be either written straight in HTML 
+        or <a href="http://daringfireball.net/projects/markdown/">Markdown</a>.
+      </li>
+      <li>An index file named <em>index.html</em>, where you start a presentation from.</li>
+      <li>
+        A <em>vendor</em> folder, which contains the necessary JavaScript and CSS files to
+        run a presentation.
+      </li>
+    </ul>
+  </section>
+  <section id="configuration">
+    <h1>Configuration</h1>
+    <p>
+      The presentation's config file is a valid JSON file that looks 
+      <a href="http://github.com/juliocesar/shining/blob/master/templates/config.json">like this</a>.
+      The following attributes and values are valid:
+    </p>
+    <dl>
+      <dt>slides</dt>
+      <dd>An array containing the file names of the presentation's slides. If you're using the generator to add slides, don't worry about editing it.</dd>
+      <dt>transitions</dt>
+      <dd>
+        A string corresponding to one of the <a href="#transitions">available transition effects</a>, or <em>false</em> disables transitions altogether.
+      </dd>
+      <dt>plugins</dt>
+      <dd>
+        A list of plugins that will be used. By default, the <a href="#resize">resize</a> and <a href="#iphone">syntaxhighlighter</a> plugins will get loaded.
+      </dd>
+      <dt>title</dt>
+      <dd>A title for the presentation.</dd>
+      <dt>help</dt>
+      <dd>Boolean. <em>false</em> disables the <a href="http://growl.info/">Growl</a>-like messages that appear on the top right hand corner of the screen.</dd>
+      <dt>theme</dt>
+      <dd>
+        The theme used for the presentation. Currently shine features 2 themes: default (dark, and centered) and slidedown (predominantly white, aligned
+        to the left). Omitting this value applies the default theme.
+      </dd>
+    </dl>
+  </section>
+  <section id="slides">
+    <h1>Slides</h1>
+    <p>Change the directory to the presentation's directory, then run:</p>
+    <code>
+      $ shine slide mynewslide
+    </code>
+    <p>
+      Where <em>mynewslide</em> is the name of the slide. A new slide will be created in <em>slides/mynewslide.html</em>. This will also
+      automatically updated the <em>config.json</em> file, adding a reference to the new slide.
+    </p>
+    <p>
+      You can also create slides manually by adding an HTML file to <em>slides</em>, and then adding the file name to <em>config.json</em>. 
+      Though really, just use the damn generator. 
+    </p>
+    <p>
+      Shining supports <a href="http://daringfireball.net/projects/markdown/">Markdown</a> apart from HTML. To create a new slide using
+      Markdown, run the same command as above, passing "markdown" as a parameter, like so:
+    </p>
+    <code>
+      $ shine slide mynewslide markdown
+    </code>
+  </section>
+  <section id="slide-scripts">
+    <h1>Slide scripts</h1>
+    <p>
+      Slides can have an associated script which you can use to trigger certain actions (for example: effects, hiding or showing things) at
+      a predetermined point in time from when a slide plays. Slide scripts are kept in the <em>slide/</em> directory along with the actual
+      slides, and have the same file name, except that the extension should be <em>.js</em>.
+    </p>
+    <p>
+      So assuming we have a slide named <em>mynewslide.html</em> sitting in the <em>slides</em> folder, to create a slide script for it,
+      create a file named <em>mynewslide.js</em> in that same folder. Put this in:
+    </p>    
+    <script type="syntaxhighlighter" class="brush: js">
+      2,  alert("alert at 2 seconds")
+      8,  alert("alert again at 8 seconds")
+    </script>
+    <p>
+      Not particularly useful, but what this script does it it schedules 2 alerts: one will fire 2 seconds after the slide appeared,
+      and the second alert will be fired at 8 seconds. This should give you an idea of the syntax for slide scripts.
+    </p>
+    <p>You can also pass multiple instructions to a single instant in multiple lines, like this:</p>
+    <script type="syntaxhighlighter" class="brush: js">
+      3,  console.log('first')
+          console.log('second')
+      5,  console.log('last')
+    </script>
+  </section>
+  <section id="slide-styles">
+    <h1>Slide stylesheets</h1>
+    <p>
+      Like slide scripts, creating a file with the same name as a slide, but using a <em>.css</em> file extension (following the previous
+      example, it would be <em>mynewslide.css</em>), will ensure that the stylesheets gets included in the page as that slide loads. 
+      This is handy for when you want a set of rules to only apply when a certain slide plays.
+    </p>
+  </section>
+  <section id="transitions">
+    <h1>Transitions</h1>
+    <p>
+      Transitions kick in as you switch from one slide to another. Available transitions are:
+    </p>
+    <dl>
+      <dt>fade</dt>
+      <dd>Fade slides in and out.</dd>
+      <dt>slide</dt>
+      <dd>Slides a slide to the left, next one comes from the right.</dd>
+    </dl>    
+  </section>
+  <section id="plugins">
+    <h1>Plugins</h1>
+    <p>
+      Plugins help Shining go a bit further by adding to the core set of functionalities. They consist simply of a Javascript file that 
+      gets loaded according to the name specified in a presentation's configuration file (e.g.: <em>resize</em> loads 
+      <em>plugins/resize.js</em>). 
+    </p>
+    <p>Plugins available by default:</p>
+    <dl>
+      <dt>resize</dt>
+      <dd>Automatic font sizing according to available screen dimensions.</dd>
+      <dt>iphone</dt>
+      <dd>
+        BETA: Adds iPhone and iPad support to a presentation. Transitions are disabled, in favor of touch and slide
+        based navigation. <a href="#steps">Steps</a> are also shown by default for obvious reasons.
+      </dd>
+    </dl>
+  </section>
+  <section id="heroku">
+    <h1>Deploying to Heroku</h1>
+    <p>
+      Deploying a Shining presentation to Heroku allows you to quickly host a presentation online. This can be handy if for any reason you 
+      don't have a web server handy to host it.
+    </p>
+    <p>In a presentation's directory, run:</p>
+    <code>
+      $ shine deploy
+    </code>
+    <p>
+      Shining will create a URL friendly name based on the name of your presentation. You can override that by passing an argument to be used 
+      as the app name, as in:
+    </p>
+    <code>
+      $ shine deploy "peanut butter jelly time" 
+    </code>
+    <p>Check the console output for the URL where your presentation is hosted.</p>
+  </section>
+  <section id="contributing">
+    <h1>Contributing</h1>
+    <p>
+      Shining is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>. The code is hosted on 
+      <a href="http://github.com/juliocesar/shining">GitHub</a>. Feel free to report bugs using Github's issue tracker. 
+    </p>
+  </section>
+  <section id="author">
+    <h1>Author</h1>
+    <p>Shining is made with <span class="love">♥</span> by <a href="http://awesomebydesign.com">Julio Cesar Ody</a>.
+  </section>
   <script src="js/jquery-1.4.2.min.js"></script>
+  <script src="/js/jquery.nivo.slider.pack.js"></script>
   <script src="js/zescripts.js"></script>
+  <script type="text/javascript" src="http://use.typekit.com/zkt1lvj.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <script>
     var _gaq = [['_setAccount', 'UA-15746742-1'], ['_trackPageview']];
     (function(d, t) {
