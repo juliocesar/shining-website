@@ -59,6 +59,11 @@ section > ul,
 section > dl  { font-size: 1.8em; margin: 0.5em 0 }
 section ul    { list-style-type: disc }
 
+@media all and (max-device-width: 480px) {
+  header hgroup { width: 460px }
+  body { padding: 6em 1em !important }
+}
+
 
 /*
  * jQuery Nivo Slider v2.1
